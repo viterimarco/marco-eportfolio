@@ -1,0 +1,457 @@
+/* =========================================================
+   MARCO VITERI - EME 6208 E-PORTFOLIO
+   Project 4 - Traditional HTML/CSS Version
+   ========================================================= */
+
+
+/* =========================================================
+   GLOBAL SETTINGS
+   ========================================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: #10131a;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    color: #d9dce3;
+    line-height: 1.7;
+}
+
+#wrapper {
+    min-height: 100vh;
+    background: linear-gradient(
+        180deg,
+        #10131a 0%,
+        #161a24 55%,
+        #11141b 100%
+    );
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+
+/* =========================================================
+   TYPOGRAPHY
+   ========================================================= */
+
+h1,
+h2,
+h3 {
+    margin-top: 0;
+}
+
+h1 {
+    font-size: 4.7rem;
+    line-height: 1;
+    letter-spacing: -3px;
+}
+
+h2 {
+    font-size: 2rem;
+    line-height: 1.2;
+    color: #ffffff;
+}
+
+p {
+    margin-top: 0;
+}
+
+a {
+    color: #b7a7ff;
+    text-decoration: none;
+    transition: 0.25s ease;
+}
+
+a:hover {
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   NAVIGATION
+   ========================================================= */
+
+#menu-wrapper {
+    width: 100%;
+    background: rgba(15, 18, 26, 0.96);
+    border-bottom: 1px solid #2d3240;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+#menu {
+    min-height: 66px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#menu ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+#menu li {
+    margin: 0;
+    padding: 0;
+}
+
+#menu a {
+    display: block;
+    padding: 22px 18px;
+    color: #c8ccd6;
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    border-bottom: 3px solid transparent;
+}
+
+#menu a:hover {
+    color: #ffffff;
+    background: #1d2230;
+    border-bottom: 3px solid #8e78ff;
+}
+
+#menu .current_page_item a {
+    color: #ffffff;
+    background: #211e34;
+    border-bottom: 3px solid #8e78ff;
+}
+
+
+/* =========================================================
+   HEADER / HERO
+   ========================================================= */
+
+#logo {
+    padding: 85px 20px 55px 20px;
+    text-align: center;
+}
+
+#logo h1 {
+    margin: 0;
+    color: #ffffff;
+    font-weight: 800;
+}
+
+#logo h1::after {
+    content: "";
+    display: block;
+    width: 85px;
+    height: 4px;
+    margin: 28px auto 25px auto;
+    background: #8e78ff;
+    border-radius: 20px;
+}
+
+#logo p {
+    margin: 0;
+    color: #aeb4c2;
+    font-size: 1.12rem;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+
+/* =========================================================
+   INTRODUCTION / ABOUT SECTION
+   ========================================================= */
+
+#page {
+    padding: 10px 20px 70px 20px;
+}
+
+.entry {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 42px 48px;
+    background: #1b202b;
+    border: 1px solid #303646;
+    border-radius: 16px;
+    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.25);
+}
+
+.entry h2 {
+    margin-bottom: 22px;
+    color: #ffffff;
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.entry p {
+    color: #c0c5cf;
+    font-size: 1.03rem;
+    margin-bottom: 18px;
+}
+
+.entry p:last-child {
+    margin-bottom: 0;
+}
+
+
+/* =========================================================
+   PROJECT AREA
+   ========================================================= */
+
+#projects {
+    padding: 15px 0 80px 0;
+}
+
+
+/* =========================================================
+   PROJECT GRID
+   ========================================================= */
+
+#three-column,
+.three-column {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    padding-bottom: 24px;
+}
+
+#three-column .tbox1,
+#three-column .tbox2,
+#three-column .tbox3,
+.three-column .tbox1,
+.three-column .tbox2,
+.three-column .tbox3 {
+    width: auto;
+    float: none;
+    margin: 0;
+}
+
+
+/* =========================================================
+   PROJECT CARDS
+   ========================================================= */
+
+.box-style {
+    height: 100%;
+    background: #1b202b;
+    border: 1px solid #303646;
+    border-radius: 16px;
+    overflow: hidden;
+    transition:
+        transform 0.25s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.box-style:hover {
+    transform: translateY(-6px);
+    border-color: #7667ce;
+    box-shadow: 0 18px 38px rgba(0, 0, 0, 0.3);
+}
+
+.box-style .content {
+    height: 100%;
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.project-number {
+    display: inline-block;
+    margin-bottom: 17px;
+    padding: 6px 12px;
+    background: #292440;
+    border: 1px solid #443d68;
+    border-radius: 50px;
+    color: #c7bdff;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.box-style h2 {
+    margin-bottom: 15px;
+    color: #ffffff;
+    font-size: 1.55rem;
+    font-weight: 700;
+}
+
+.box-style p {
+    margin-bottom: 25px;
+    color: #b7bdc9;
+    font-size: 0.96rem;
+    line-height: 1.7;
+    flex-grow: 1;
+}
+
+
+/* =========================================================
+   BUTTONS
+   ========================================================= */
+
+.button {
+    display: inline-block;
+    margin-top: auto;
+    padding: 11px 20px;
+    background: #7c68e8;
+    color: #ffffff;
+    border: 1px solid #8c79ef;
+    border-radius: 8px;
+    font-size: 0.88rem;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+    transition:
+        background 0.25s ease,
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.button:hover {
+    background: #927fff;
+    color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(124, 104, 232, 0.28);
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+#footer {
+    padding: 34px 20px;
+    background: #0c0f15;
+    border-top: 1px solid #292e3a;
+    text-align: center;
+}
+
+#footer p {
+    margin: 4px 0;
+    color: #8e95a3;
+    font-size: 0.88rem;
+}
+
+#footer .footer-tagline {
+    color: #686f7d;
+    font-size: 0.78rem;
+    letter-spacing: 1.3px;
+    text-transform: uppercase;
+}
+
+
+/* =========================================================
+   RESPONSIVE DESIGN - TABLETS
+   ========================================================= */
+
+@media screen and (max-width: 1000px) {
+
+    h1 {
+        font-size: 3.8rem;
+    }
+
+    #three-column,
+    .three-column {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    #menu a {
+        padding: 19px 12px;
+        font-size: 0.82rem;
+    }
+
+    .entry {
+        padding: 35px;
+    }
+}
+
+
+/* =========================================================
+   RESPONSIVE DESIGN - PHONES
+   ========================================================= */
+
+@media screen and (max-width: 700px) {
+
+    .container {
+        width: 92%;
+    }
+
+    #menu {
+        min-height: auto;
+    }
+
+    #menu ul {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    #menu li {
+        width: 100%;
+        text-align: center;
+    }
+
+    #menu a {
+        padding: 13px 10px;
+        border-bottom: 1px solid #282d38;
+    }
+
+    #menu a:hover,
+    #menu .current_page_item a {
+        border-bottom: 1px solid #8e78ff;
+    }
+
+    #logo {
+        padding: 60px 15px 45px 15px;
+    }
+
+    h1 {
+        font-size: 3rem;
+        letter-spacing: -2px;
+    }
+
+    #logo p {
+        font-size: 0.92rem;
+        line-height: 1.7;
+        letter-spacing: 1.2px;
+    }
+
+    #page {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .entry {
+        padding: 28px 25px;
+    }
+
+    .entry h2 {
+        font-size: 1.65rem;
+    }
+
+    #three-column,
+    .three-column {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .box-style .content {
+        padding: 27px;
+    }
+}
